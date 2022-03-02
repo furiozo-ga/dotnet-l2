@@ -28,6 +28,7 @@ steps:
     npm -v
     npx -v
     npx semantic-release -v
+    npm ls -g
 
   displayName: 'Run a multi-line script'
 
