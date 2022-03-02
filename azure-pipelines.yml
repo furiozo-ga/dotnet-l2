@@ -9,14 +9,21 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+container: alpine:3.15
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
+    echo See https://aka.ms/yaml xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     #npm install
+    uname -a
+    cat /etc/issue
+    node -v
+    npm -v
+    npx -v
     npx semantic-release -v
 
   displayName: 'Run a multi-line script'
