@@ -10,7 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 #container: node:17-bullseye
-container: node:17-bullseye-slim
+#container: node:17-bullseye-slim
+container: node:17-alpine
 
 steps:
 - script: echo Hello, world!
