@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-container: alpine:3.15
+container: node:17-bullseye
 
 steps:
 - script: echo Hello, world!
