@@ -9,7 +9,8 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-container: node:17-bullseye
+#container: node:17-bullseye
+container: node:17-bullseye-slim
 
 steps:
 - script: echo Hello, world!
