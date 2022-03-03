@@ -12,7 +12,7 @@ pool:
 #container: node:17-bullseye
 #container: node:17-bullseye-slim
 #container: node:17-alpine
-container: furiozoga/semantic-release:0.0.1
+#container: furiozoga/semantic-release:0.0.1
 
 steps:
 - script: echo Hello, world!
@@ -24,6 +24,8 @@ steps:
     #npm install
     uname -a
     cat /etc/issue
+    cat /proc/cpuinfo
+    free
     node -v
     npm -v
     npx -v
@@ -31,5 +33,4 @@ steps:
     npm ls -g
 
   displayName: 'Run a multi-line script'
-
 
