@@ -35,13 +35,7 @@ steps:
     npm ls -g
   displayName: 'Run a multi-line script'
 
-- task: CmdLine@2
-  inputs:
-    script: |
-      echo Write your commands here
-      
-      echo Hello world 1
-    failOnStderr: true
+
 - task: Bash@3
   inputs:
     targetType: 'inline'
