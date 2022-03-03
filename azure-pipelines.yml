@@ -14,7 +14,7 @@ pool:
 #container: node:17-bullseye-slim
 #container: node:17-alpine
 #container: furiozoga/semantic-release:0.0.1
-container: furiozoga/dotnetsdk
+container: furiozoga/dotnetsdk:latest
 
 steps:
 - script: echo Hello, world!
@@ -33,6 +33,5 @@ steps:
     npx -v
     npx semantic-release -v
     npm ls -g
-
   displayName: 'Run a multi-line script'
 
