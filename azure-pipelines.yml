@@ -21,7 +21,6 @@ steps:
   clean: false
   persistCredentials: true
 
-- script: echo Hello, world! script
 - bash: echo Hello, world! bash
   displayName: 'Run a one-line script'
 
