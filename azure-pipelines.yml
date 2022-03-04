@@ -33,7 +33,7 @@ steps:
     echo $(System.AccessToken)
     git config -l
     cat /etc/issue
-#    cat /proc/cpuinfo
+    #cat /proc/cpuinfo
     free
     node -v
     npm -v
