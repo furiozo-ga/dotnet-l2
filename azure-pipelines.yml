@@ -14,7 +14,7 @@ pool:
 #container: node:17-bullseye-slim
 #container: node:17-alpine
 #container: furiozoga/semantic-release:0.0.1
-container: furiozoga/dotnetsdk:latest
+#container: furiozoga/dotnetsdk:latest
 
 steps:
 - checkout: self
