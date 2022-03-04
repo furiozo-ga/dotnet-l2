@@ -33,6 +33,7 @@ steps:
     npx -v
     npx semantic-release -v
     npm ls -g
+    npx semantic-release --no-ci
   displayName: 'Run a multi-line script'
 
 
