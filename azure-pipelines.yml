@@ -17,6 +17,10 @@ pool:
 container: furiozoga/dotnetsdk:latest
 
 steps:
+- checkout: self
+  clean: false
+  persistCredentials: true
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
@@ -25,8 +29,10 @@ steps:
     echo See https://aka.ms/yaml xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     #npm install
     uname -a
+    echo $(System.AccessToken)
+    git config -l
     cat /etc/issue
-    cat /proc/cpuinfo
+#    cat /proc/cpuinfo
     free
     node -v
     npm -v
