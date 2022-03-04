@@ -17,15 +17,12 @@ pool:
 container: furiozoga/dotnetsdk:latest
 
 steps:
-<<<<<<< HEAD
 - checkout: self
   clean: false
   persistCredentials: true
 
-- script: echo Hello, world!
-=======
-- bash: echo Hello, world!
->>>>>>> 75f68fcdc26fbf07fdb16a5edd5e6d497f61ec0a
+- script: echo Hello, world! script
+- bash: echo Hello, world! bash
   displayName: 'Run a one-line script'
 
 - bash: |
@@ -52,6 +49,5 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      
       echo 'Hello world 2'
     failOnStderr: true
