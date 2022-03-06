@@ -21,8 +21,12 @@ steps:
   clean: false
   persistCredentials: true
 
-- bash: echo Hello, world! bash
-  displayName: 'Run a one-line script'
+#- bash: echo Hello, world! bash
+#  displayName: 'Run a one-line script'
+
+- task: Npm@1
+  inputs:
+    command: 'install'
 
 - bash: |
     echo Add other tasks to build, test, and deploy your project.
