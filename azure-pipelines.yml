@@ -45,7 +45,7 @@ steps:
     $t npm -v
     $t npx -v
     $t npx semantic-release -v
-    $t npm ls -g
+    $t npm ls
   displayName: 'Run a multi-line script'
 
 - task: Bash@3
@@ -58,6 +58,7 @@ steps:
       npx semantic-release --no-ci
 
 - task: Bash@3
+  enabled: false
   inputs:
     targetType: 'inline'
     script: |
