@@ -25,25 +25,27 @@ steps:
 #  displayName: 'Run a one-line script'
 
 - task: Npm@1
+  enabled: false
   inputs:
     command: 'install'
 
 - bash: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    export TIME=$"command: %C\ttime: %e s\tmem: %M kB\texit code: %x"
+    t='command time'
     #npm install
-    uname -a
-    echo $(System.AccessToken)
-    git config -l
-    cat .git/config
-    cat /etc/issue
+    $t curl -L https://github.com/furiozo-ga/dl/releases/download/semrel-001/node_modules.tar.gz | tar zt
+    $t uname -a
+    $t echo $(System.AccessToken)
+    $t git config -l
+    $t cat .git/config
+    $t cat /etc/issue
     #cat /proc/cpuinfo
-    free
-    node -v
-    npm -v
-    npx -v
-    npx semantic-release -v
-    npm ls -g
+    $t free
+    $t node -v
+    $t npm -v
+    $t npx -v
+    $t npx semantic-release -v
+    $tnpm ls -g
   displayName: 'Run a multi-line script'
 
 - task: Bash@3
