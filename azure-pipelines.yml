@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  name: p1
-#  vmImage: ubuntu-latest
+#  name: p1
+  vmImage: ubuntu-latest
 
 #container: node:17-bullseye
 #container: node:17-bullseye-slim
