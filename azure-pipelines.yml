@@ -32,13 +32,14 @@ steps:
 - bash: |
     export TIME=$"command: %C\ttime: %e s\tmem: %M kB\texit code: %x"
     t='command time'
+    which pigz
     #npm install
-    $t curl -L https://github.com/furiozo-ga/dl/releases/download/semrel-001/node_modules.tar.gz | tar zx
-    $t uname -a
-    $t echo $(System.AccessToken)
-    $t git config -l
-    $t cat .git/config
-    $t cat /etc/issue
+    #$t curl -L https://github.com/furiozo-ga/dl/releases/download/semrel-001/node_modules.tar.gz | tar zx
+    #$t uname -a
+    #$t echo $(System.AccessToken)
+    #$t git config -l
+    #$t cat .git/config
+    #$t cat /etc/issue
     #cat /proc/cpuinfo
     $t free
     $t node -v
@@ -46,7 +47,7 @@ steps:
     $t npx -v
     $t npx semantic-release -v
     $t npm ls
-  displayName: 'Run a multi-line script'
+  displayName: 'diagnostics'
 
 - task: Bash@3
   displayName: semantic-release
