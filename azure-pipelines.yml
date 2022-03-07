@@ -36,6 +36,8 @@ steps:
     #npm install
     $t curl -L https://github.com/furiozo-ga/dl/releases/download/semrel-001/node_modules.tar.gz | tar mx -I pigz
     $t dotnet --version
+    echo ------------- which dotnet --------------
+    which dotnet
     #$t uname -a
     #$t echo $(System.AccessToken)
     #$t git config -l
