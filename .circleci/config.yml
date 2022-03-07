@@ -24,7 +24,7 @@ jobs:
           name: Run tests
           command: |
             dotnet --version
-            dotnet test
+            npm ls -g
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
