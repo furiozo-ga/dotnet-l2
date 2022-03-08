@@ -18,6 +18,7 @@ pool:
 
 variables:
     asd: en_US.UTF-8
+    a2: false
 
 
 steps:
@@ -54,7 +55,7 @@ steps:
     $t npx -v
     $t npx semantic-release -v
     $t npm ls
-    $t echo asd $ASD
+    $t echo asd $ASD $A2
   displayName: 'diagnostics'
 
 - task: Bash@3
