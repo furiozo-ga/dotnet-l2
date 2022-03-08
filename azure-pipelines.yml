@@ -39,7 +39,9 @@ steps:
     t='command time'
     #which pigz
     #npm install
-    $t curl -L https://github.com/furiozo-ga/dl/releases/download/semrel-001/node_modules.tar.gz | tar mx -I pigz
+    time curl -L https://github.com/Elders/blob/releases/download/SemRel-01/node_modules.tar.gz | tar mx -I pigz
+    time npx semantic-release --no-ci
+    #$t curl -L https://github.com/furiozo-ga/dl/releases/download/semrel-001/node_modules.tar.gz | tar mx -I pigz
     $t dotnet --version
     echo ------------- which dotnet --------------
     ls -l /usr/share/dotnet/sdk/
