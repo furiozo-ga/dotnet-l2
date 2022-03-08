@@ -33,22 +33,13 @@ steps:
   enabled: false
   inputs:
     command: 'install'
-- task: DownloadGitHubRelease@0
-  inputs:
-    connection: 'furiozo-ga'
-    userRepository: 'Elders/blob'
-    defaultVersionType: 'specificTag'
-    version: '61266574'
-    itemPattern: 'node_modules.tar.gz'
-    downloadPath: '$(System.ArtifactsDirectory)'
+
 - bash: |
     export TIME=$"command: %C\ttime: %e s\tmem: %M kB\texit code: %x"
     t='command time'
     #which pigz
     #npm install
-    #$t curl -LH "`cat .git/config|grep -io 'authorization.*'`" https://github.com/Elders/blob/releases/download/SemRel-01/node_modules.tar.gz | tar mx -I pigz
-    echo dir $(System.ArtifactsDirectory)
-    ls -l $(System.ArtifactsDirectory)
+    $t curl -L https://github.com/Elders/blob/releases/download/SemRel-01/node_modules.tar.gz | tar mx -I pigz
     time npx semantic-release --no-ci
     #$t curl -L https://github.com/furiozo-ga/dl/releases/download/semrel-001/node_modules.tar.gz | tar mx -I pigz
     $t dotnet --version
