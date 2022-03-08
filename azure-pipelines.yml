@@ -54,7 +54,7 @@ steps:
     $t npx -v
     $t npx semantic-release -v
     $t npm ls
-    $t echo asd $asd
+    $t echo asd $ASD
   displayName: 'diagnostics'
 
 - task: Bash@3
