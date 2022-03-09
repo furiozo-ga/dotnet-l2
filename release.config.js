@@ -79,12 +79,12 @@ module.exports = {
             }],
             "@semantic-release/release-notes-generator",
             "@semantic-release/changelog", {
-                "changelogFile": "docs/CHANGELOG.md", 
+                "changelogFile": "docs/CHLOG.md", 
             },
             "@semantic-release/exec"
     ],
     branches: [
-        'master', 
-        //{ name: 'feat-builds', prerelease: true },          
+        'master',
+        //{ name: 'feat-builds', prerelease: true },сасасасевееререр
     ]
 }
