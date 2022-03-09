@@ -81,7 +81,7 @@ module.exports = {
            ["@semantic-release/changelog",{
                 "changelogFile": "CHLOG.md"
             }],
- [
+    [
       "@semantic-release/git",
       {
         "assets": ["CHLOG.md"]
