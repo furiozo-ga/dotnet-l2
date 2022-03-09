@@ -39,8 +39,8 @@ module.exports = {
             cmd: "echo prepare",
         },
 
-        '@semantic-release/changelog',
-        '@semantic-release/git',
+//        '@semantic-release/changelog',
+//        '@semantic-release/git',
     ],
     publish: [
 
