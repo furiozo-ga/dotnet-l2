@@ -68,15 +68,15 @@ module.exports = {
         },
     ],
     plugins: [
-//            ["@semantic-release/commit-analyzer", {
-//                "releaseRules": [
-//                {"type": "major", "release": "major"},
-//                {"type": "release", "release": "major"},
-//                ],
-//                "parserOpts": {
-//                "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
-//                }
-//            }],
+            ["@semantic-release/commit-analyzer", {
+                "releaseRules": [
+                    {"type": "major", "release": "major"},
+                    {"type": "release", "release": "major"},
+                ],
+                "parserOpts": {
+                    "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+                }
+            }],
 //            "@semantic-release/release-notes-generator",
 //            ["@semantic-release/changelog", {
 //                "changelogFile": "CHLOG.md"
