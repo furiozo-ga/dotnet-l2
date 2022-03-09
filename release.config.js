@@ -11,8 +11,8 @@ module.exports = {
     //     },
     //     // Verifies the conditions for the plugins used below
     //     // For example verifying a GITHUB_TOKEN environment variable has been provided
-//         '@semantic-release/changelog',
-//         '@semantic-release/git',
+        '@semantic-release/changelog',
+        '@semantic-release/git',
     //     '@semantic-release/github',
     ],
     prepare: [
@@ -67,7 +67,7 @@ module.exports = {
 //            cmd: "sed -i 's/{{version}}/${nextRelease.version}/g' ci/manifest.yaml",
         },
     ],
-    plugins: [
+    "plugins": [
             ["@semantic-release/commit-analyzer", {
                 "releaseRules": [
                     {"type": "major", "release": "major"},
@@ -78,9 +78,9 @@ module.exports = {
                 }
             }],
             "@semantic-release/release-notes-generator",
-//            ["@semantic-release/changelog", {
-//                "changelogFile": "CHLOG.md"
-//            }],
+            ["@semantic-release/changelog", {
+                "changelogFile": "CHLOG.md" sdf sd fds f
+            }],
             "@semantic-release/exec"
     ],
     branches: [
