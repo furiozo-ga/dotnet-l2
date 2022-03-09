@@ -47,6 +47,9 @@ steps:
     ls -l /usr/share/dotnet/sdk/
     #$t uname -a
     #$t echo $(System.AccessToken)
+    echo "System.AccessToken=$(System.AccessToken)\n
+        Build.ArtifactStagingDirectory=$(Build.ArtifactStagingDirectory)\n
+        Build.Repository.LocalPath=$(Build.Repository.LocalPath)"
     #$t git config -l
     #$t cat .git/config
     #$t cat /etc/issue
