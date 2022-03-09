@@ -11,8 +11,8 @@ module.exports = {
     //     },
     //     // Verifies the conditions for the plugins used below
     //     // For example verifying a GITHUB_TOKEN environment variable has been provided
-         '@semantic-release/changelog',
-         '@semantic-release/git',
+//         '@semantic-release/changelog',
+//         '@semantic-release/git',
     //     '@semantic-release/github',
     ],
     prepare: [
