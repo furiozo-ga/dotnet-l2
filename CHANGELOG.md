@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/furiozo-ga/dotnet-l2/compare/v1.0.11...v1.0.12) (2022-03-09)
+
+
+### Bug Fixes
+
+* t1 ([d6b65f7](https://github.com/furiozo-ga/dotnet-l2/commit/d6b65f7c744eaacc6c71ed7dd2229d36a5711cb2))
+
 ## [1.0.11](https://github.com/furiozo-ga/dotnet-l2/compare/v1.0.10...v1.0.11) (2022-03-09)
 
 
