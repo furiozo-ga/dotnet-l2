@@ -79,9 +79,9 @@ module.exports = {
             }],
             "@semantic-release/release-notes-generator",
             ["@semantic-release/changelog", {
-                "changelogFile": "CHLOG.md",
+                "changelogFile": "CHLOG.md"
             }],
-            "@semantic-release/exec"
+//            "@semantic-release/exec"
     ],
     branches: [
         'master',
