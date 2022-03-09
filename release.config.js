@@ -79,7 +79,7 @@ module.exports = {
             }],
             "@semantic-release/release-notes-generator",
             ["@semantic-release/changelog", {
-                "changelogFile": "CHLOG.md"
+                "changelogFilea": "CHLOG.md"
             }],
             "@semantic-release/exec"
     ],
