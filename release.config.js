@@ -18,7 +18,7 @@ module.exports = {
     prepare: [
         {
             path: '@semantic-release/exec',
-            cmd: `echo aaa`,
+            cmd: `echo aaa ------`,
         },
 
 //        {
