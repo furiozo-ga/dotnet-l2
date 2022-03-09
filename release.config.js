@@ -41,15 +41,15 @@ module.exports = {
            ["@semantic-release/changelog",{
                 "changelogFile": "CHLOG.md" 
             }],
+        ["@semantic-release/git",{
+            "assets": ["CHLOG.md"]
+        }],
 
 //        '@semantic-release/changelog',
 //        '@semantic-release/git',
     ],
     publish: [
 
-        ["@semantic-release/git",{
-            "assets": ["CHLOG.md"]
-        }],
 
     ],
     success: [
