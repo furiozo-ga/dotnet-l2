@@ -25,27 +25,19 @@ module.exports = {
 //            path: '@semantic-release/exec',
 //            cmd: `docker login unicominternal.azurecr.io -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD`,
 //        },
-
-
         //{
         //     path: '@semantic-release/exec',
         //     cmd: "docker build -f $LOCAL_PATH/ci/Dockerfile.Api -t unicominternal.azurecr.io/unicom.volume.api:${nextRelease.version} $STAGING_PATH",
         //},
-
-//        {
-//            path: '@semantic-release/exec',
-//            cmd: "docker build -f $LOCAL_PATH/ci/Dockerfile.Service -t unicominternal.azurecr.io/unicom.volume.service:${nextRelease.version} $STAGING_PATH",
-//        },
-
         //{
         //    path: '@semantic-release/exec',
         //    cmd: "docker push unicominternal.azurecr.io/unicom.volume.api:${nextRelease.version}",
         //},
 
-//        {
-//            path: '@semantic-release/exec',
-//            cmd: "docker push unicominternal.azurecr.io/unicom.volume.service:${nextRelease.version}",
-//        },
+        {
+            path: '@semantic-release/exec',
+            cmd: "echo prepare",
+        },
 
         '@semantic-release/changelog',
         '@semantic-release/git',
@@ -71,7 +63,7 @@ module.exports = {
     success: [
         {
             path: '@semantic-release/exec',
-            cmd: "echo xxxxx"
+            cmd: "echo success"
 //            cmd: "sed -i 's/{{version}}/${nextRelease.version}/g' ci/manifest.yaml",
         },
     ],

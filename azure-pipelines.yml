@@ -52,6 +52,8 @@ steps:
         Build.Repository.LocalPath=$(Build.Repository.LocalPath)
         `pwd`"
     ls -l ..
+    echo ===== mount =====
+    mount
     #$t git config -l
     #$t cat .git/config
     #$t cat /etc/issue
