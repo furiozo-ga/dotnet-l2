@@ -38,27 +38,19 @@ module.exports = {
             path: '@semantic-release/exec',
             cmd: "echo prepare",
         },
+           ["@semantic-release/changelog",{
+                "changelogFile": "CHLOG.md" 
+            }],
 
 //        '@semantic-release/changelog',
 //        '@semantic-release/git',
     ],
     publish: [
 
-        // https://github.com/semantic-release/git
-        // Git plugin is need so the changelog file will be committed to the Git repository and available on subsequent builds in order to be updated.
-        //'@semantic-release/git',
+        ["@semantic-release/git",{
+            "assets": ["CHLOG.md"]
+        }],
 
-        // https://github.com/semantic-release/git
-        // Exec plugin uses to call dotnet nuget push to push the packages from 
-        // the artifacts folder to NuGet
-
-        // https://github.com/semantic-release/github
-        // Set of Semantic-release plugins for publishing a GitHub release.
-        // Includes the packages from the artifacts folder as assets
-        // {
-        //     path: '@semantic-release/github',
-        //     assets: 'artifacts/**/*.nupkg',
-        // },
     ],
     success: [
         {
@@ -67,7 +59,7 @@ module.exports = {
 //            cmd: "sed -i 's/{{version}}/${nextRelease.version}/g' ci/manifest.yaml",
         },
     ],
-    "plugins": [
+    plugins: [
             ["@semantic-release/commit-analyzer", {
                 "releaseRules": [
                     {"type": "major", "release": "major"},
@@ -78,15 +70,6 @@ module.exports = {
                 }
             }],
             "@semantic-release/release-notes-generator",
-           ["@semantic-release/changelog",{
-                "changelogFile": "CHLOG.md" 
-            }],
-    [
-      "@semantic-release/git",
-      {
-        "assets": ["CHLOG.md"]
-      }
-    ],
 
             "@semantic-release/exec"
     ],
