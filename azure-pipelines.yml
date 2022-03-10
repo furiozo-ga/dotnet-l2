@@ -17,9 +17,8 @@ pool:
 #container: furiozoga/dotnetsdk:latest
 
 variables:
-    asd: en_US.UTF-8
-    a2: false
-
+    TYPE: none
+    VERSION: 0.0.0
 
 steps:
 - checkout: self
@@ -72,7 +71,6 @@ steps:
     $t npx -v
     $t npx semantic-release -v
     $t npm ls
-    $t echo asd $ASD $A2
   displayName: 'diagnostics'
 
 - task: Bash@3
@@ -83,5 +81,5 @@ steps:
     script: |
       ls -l
       ls -l dir
-      echo version=$(version)
-      echo type=$(type)
+      echo type=$TYPE
+      echo version=$VERSION
