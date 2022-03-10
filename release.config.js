@@ -17,7 +17,8 @@ module.exports={
             if [ "\${nextRelease.type}" = "patch" ]; then
                 echo this is patch
             fi
-        `
+        `,
+        failCmd: `echo ====== fail ======`
     }],
 
     "@semantic-release/release-notes-generator",
