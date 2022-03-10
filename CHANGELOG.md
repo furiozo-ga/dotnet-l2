@@ -1,3 +1,11 @@
+## [5.0.2](https://github.com/furiozo-ga/dotnet-l2/compare/v5.0.1...v5.0.2) (2022-03-10)
+
+
+### Bug Fixes
+
+* asdad ([65e34d8](https://github.com/furiozo-ga/dotnet-l2/commit/65e34d82276b760325199f4943d51cd41df79c46))
+* asdad ([efc4010](https://github.com/furiozo-ga/dotnet-l2/commit/efc401083c86cce1850d17ba98d66a16adf3393c))
+
 ## [5.0.1](https://github.com/furiozo-ga/dotnet-l2/compare/v5.0.0...v5.0.1) (2022-03-10)
 
 
