@@ -1,12 +1,12 @@
 module.exports={
-  "plugins": [
+  plugins: [
     ["@semantic-release/commit-analyzer", {
         "releaseRules": [
             {"type": "major", "release": "major"},
             {"type": "release", "release": "major"},
         ],
         "parserOpts": {
-            "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "boza"]
+            "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
         }
     }],
 
@@ -14,6 +14,14 @@ module.exports={
     "@semantic-release/changelog",
     "@semantic-release/git"
   ],
+  success: [
+    {
+        path: '@semantic-release/exec',
+        cmd: "echo success"
+//            cmd: "sed -i 's/{{version}}/${nextRelease.version}/g' ci/manifest.yaml",
+    },
+  ],
+
   branches: [
     'master',
     { name: 'release-*', prerelease: true },
