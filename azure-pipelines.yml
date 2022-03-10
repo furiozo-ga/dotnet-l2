@@ -89,9 +89,9 @@ steps:
       echo type=$REL_TYP
       echo version=$REL_VER
 
-- ${{ if eq($[variables.REL_TYP],'') ] }}:
+- ${{ if eq($[variables.REL_TYP],'') }}:
   - bash: echo "rel : no release"
-- ${{ elseif eq($[variables.REL_TYP],'patch') ] }}:
+- ${{ elseif eq($[variables.REL_TYP],'patch') }}:
   - bash: echo "rel :$REL_TYP   ver: $REL_VER"
 - ${{ else }}:
   - bash: echo "unknown release type"
