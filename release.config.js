@@ -12,8 +12,8 @@ module.exports={
 
     ["@semantic-release/exec",{
         successCmd: `
-            echo "##vso[task.setvariable variable=REL_VER;isoutput=false]\${nextRelease.version}"
-            echo "##vso[task.setvariable variable=REL_TYP;isoutput=false]\${nextRelease.type}"
+            echo "##vso[task.setvariable variable=REL_VER;isoutput=true]\${nextRelease.version}"
+            echo "##vso[task.setvariable variable=REL_TYP;isoutput=true]\${nextRelease.type}"
         `,
         failCmd: `echo ====== fail ======`
     }],
