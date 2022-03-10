@@ -17,6 +17,7 @@ pool:
 #container: furiozoga/dotnetsdk:latest
 
 variables:
+    buildConfig: Release
     REL_TYP: none
 #    REL_VER: 0.0.0
 
@@ -31,13 +32,13 @@ steps:
 - task: Npm@1
   enabled: false
   inputs:
-    command: 'install'
+    command: install
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'publish'
+    command: publish
     publishWebProjects: false
-    arguments: '-o dir -c release'
+    arguments: -o dir -c $(buildConfig)
     zipAfterPublish: false
     modifyOutputPath: false
 
