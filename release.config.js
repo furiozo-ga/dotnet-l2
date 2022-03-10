@@ -1,5 +1,5 @@
 module.exports = {
-//    verifyConditions: [
+    verifyConditions: [
     //     // Verifies a NUGET_TOKEN environment variable has been provided
     //     () => {
     //         if (!process.env.NUGET_TOKEN) {
@@ -11,10 +11,10 @@ module.exports = {
     //     },
     //     // Verifies the conditions for the plugins used below
     //     // For example verifying a GITHUB_TOKEN environment variable has been provided
-//        '@semantic-release/changelog',
-//        '@semantic-release/git',
+        '@semantic-release/changelog',
+        '@semantic-release/git',
     //     '@semantic-release/github',
-//    ],
+    ],
     prepare: [
         {
             path: '@semantic-release/exec',
