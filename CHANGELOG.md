@@ -1,3 +1,10 @@
+# [3.0.0](https://github.com/furiozo-ga/dotnet-l2/compare/v2.0.3...v3.0.0) (2022-03-10)
+
+
+### Bug Fixes
+
+* asdad ([3c18462](https://github.com/furiozo-ga/dotnet-l2/commit/3c184629eaaff4a3a41a212b6d0c4d05f82eb9ac))
+
 ## [2.0.3](https://github.com/furiozo-ga/dotnet-l2/compare/v2.0.2...v2.0.3) (2022-03-10)
 
 
