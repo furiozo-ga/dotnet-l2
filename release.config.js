@@ -27,3 +27,4 @@ module.exports={
     { name: 'release-*', prerelease: true },
   ],
 }
+
