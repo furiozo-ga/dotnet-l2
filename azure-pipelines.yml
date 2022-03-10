@@ -71,6 +71,7 @@ steps:
     $t npx -v
     $t npx semantic-release -v
     $t npm ls
+  name:diag1
   displayName: 'diagnostics'
 
 - task: Bash@3
@@ -81,5 +82,5 @@ steps:
     script: |
       ls -l dir
       set
-      echo type=$TYPE
-      echo version=$VERSION $(VERSION)
+      echo type=$TYPE $(diag1.TYPE)
+      echo version=$VERSION $(VERSION) $(diag1.VERSION)
