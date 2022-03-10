@@ -2,7 +2,7 @@ module.exports={
   plugins: [
     ["@semantic-release/commit-analyzer", {
         releaseRules: [
-            {"type": "major", "release": "major"},
+            {"type": "major"  , "release": "major"},
             {"type": "release", "release": "major"},
         ],
         parserOpts: {
@@ -11,6 +11,7 @@ module.exports={
     }],
 
     ["@semantic-release/exec",{
+        prepareCmd
         successCmd: `
             echo "##vso[task.setvariable variable=version;isoutput=true]\${nextRelease.version}"
             echo "##vso[task.setvariable variable=   type;isoutput=true]\${nextRelease.type}"
