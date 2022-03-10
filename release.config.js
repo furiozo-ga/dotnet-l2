@@ -14,6 +14,9 @@ module.exports={
         successCmd: `
             echo "##vso[task.setvariable variable=version;isoutput=true]\${nextRelease.version}"
             echo "##vso[task.setvariable variable=   type;isoutput=true]\${nextRelease.type}"
+            if [ "\${nextRelease.type}" = "patch" ]; then
+                echo this is patch
+            fi
         `
     }],
 
