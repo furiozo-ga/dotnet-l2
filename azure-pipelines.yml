@@ -73,7 +73,6 @@ steps:
     $t npm ls
   name: diag1
   displayName: diag1
-  variables: {REL_TYP: '', REL_VER: ''}
 
 - task: Bash@3
   displayName: diag2
@@ -81,12 +80,12 @@ steps:
     failOnStderr: true
     targetType: 'inline'
     script: |
-      if [ "x$(diag1.REL_TYP)" = "x" ];then
+      if [ "x$DIAG1_REL_TYP" = "x" ];then
         echo no new release
         exit 0
       fi
-      echo type=$(diag1.REL_TYP)
-      echo version=$(diag1.REL_VER)
+      echo type=$DIAG1_REL_TYP
+      echo version=$DIAG1_REL_VER
       ls -l dir
       set
 
