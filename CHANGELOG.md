@@ -1,3 +1,5 @@
+# [5.0.0](https://github.com/furiozo-ga/dotnet-l2/compare/v4.0.7...v5.0.0) (2022-03-10)
+
 ## [4.0.7](https://github.com/furiozo-ga/dotnet-l2/compare/v4.0.6...v4.0.7) (2022-03-10)
 
 
