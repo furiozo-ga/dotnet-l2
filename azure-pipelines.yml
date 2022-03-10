@@ -17,8 +17,8 @@ pool:
 #container: furiozoga/dotnetsdk:latest
 
 variables:
-    DIAG1_TYPE: none
-    DIAG1_VERSION: 0.0.0
+    REL_TYP: none
+    REL_VER: 0.0.0
 
 steps:
 - checkout: self
@@ -82,5 +82,5 @@ steps:
     script: |
       ls -l dir
       set
-      echo type=$TYPE $DIAG1_TYPE $(diag1.TYPE) 
-      echo version=$VERSION $DIAG1_VERSION $(diag1.VERSION)
+      echo type=$REL_TYP
+      echo version=$REL_VER
