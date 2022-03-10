@@ -1,19 +1,19 @@
 module.exports={
   plugins: [
     ["@semantic-release/commit-analyzer", {
-        "releaseRules": [
+        releaseRules: [
             {"type": "major", "release": "major"},
             {"type": "release", "release": "major"},
         ],
-        "parserOpts": {
+        parserOpts: {
             "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
         }
     }],
 
     ["@semantic-release/exec",{
         successCmd: `
-            echo nextRelease.version=\${nextRelease.version}
-            echo nextRelease.type=\${nextRelease.type}
+            echo "##vso[task.setvariable variable=version;isoutput=true]\${nextRelease.version}"
+            echo "##vso[task.setvariable variable=   type;isoutput=true]\${nextRelease.type}"
         `
     }],
 
