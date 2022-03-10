@@ -93,8 +93,8 @@ steps:
 
 - bash: |
     echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
-    false
   condition: and(eq(variables['diag1.REL_TYP'], ''), succeeded())
+  failOnStderr: true
   name: norel
 
 - bash: |
