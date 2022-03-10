@@ -10,17 +10,22 @@ module.exports={
         }
     }],
 
+    ["@semantic-release/exec",{
+        successCmd: "echo ${nextRelease.version}"
+    }],
+
+
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "@semantic-release/git"
   ],
-  success: [
-    {
-        path: '@semantic-release/exec',
-        cmd: "echo success"
+//  success: [
+//    {
+//        path: '@semantic-release/exec',
+//        cmd: "echo success"
 //            cmd: "sed -i 's/{{version}}/${nextRelease.version}/g' ci/manifest.yaml",
-    },
-  ],
+//    },
+//  ],
 
   branches: [
     'master',
