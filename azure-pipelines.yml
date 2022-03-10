@@ -71,8 +71,8 @@ steps:
     $t npx -v
     $t npx semantic-release -v
     $t npm ls
-  name:diag1
-  displayName: 'diagnostics'
+  name: diag1
+  displayName: diag1
 
 - task: Bash@3
   displayName: diag2
