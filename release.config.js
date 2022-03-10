@@ -13,10 +13,7 @@ module.exports={
     ["@semantic-release/exec",{
         successCmd: `
             echo "##vso[task.setvariable variable=VERSION;isoutput=true]\${nextRelease.version}"
-            echo "##vso[task.setvariable variable=   TYPE;isoutput=true]\${nextRelease.type}"
-            if [ "\${nextRelease.type}" = "patch" ]; then
-                echo this is patch
-            fi
+            echo "##vso[task.setvariable variable=TYPE;isoutput=true]\${nextRelease.type}"
         `,
         failCmd: `echo ====== fail ======`
     }],
