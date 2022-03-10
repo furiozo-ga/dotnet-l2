@@ -11,7 +11,6 @@ module.exports={
     }],
 
     ["@semantic-release/exec",{
-        prepareCmd
         successCmd: `
             echo "##vso[task.setvariable variable=version;isoutput=true]\${nextRelease.version}"
             echo "##vso[task.setvariable variable=   type;isoutput=true]\${nextRelease.type}"
