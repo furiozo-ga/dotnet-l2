@@ -16,8 +16,8 @@ pool:
 #container: furiozoga/semantic-release:0.0.1
 #container: furiozoga/dotnetsdk:latest
 
-#variables:
-#    REL_TYP: none
+variables:
+    REL_TYP: none
 #    REL_VER: 0.0.0
 
 steps:
@@ -89,8 +89,8 @@ steps:
       echo type=$REL_TYP
       echo version=$REL_VER
 
-- ${{ if eq( variables.REL_TYP ,'') }}:
-  - bash: echo "rel no release"
+- ${{ if eq( variables.REL_TYP ,'none') }}:
+  - bash: echo "rel no release $REL_TYP"
 - ${{ elseif eq( variables.REL_TYP ,'patch') }}:
   - bash: echo "rel $REL_TYP   ver $REL_VER"
 - ${{ else }}:
