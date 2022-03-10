@@ -74,12 +74,12 @@ steps:
   displayName: 'diagnostics'
 
 - task: Bash@3
-  displayName: semantic-release
+  displayName: diag2
   inputs:
     failOnStderr: true
     targetType: 'inline'
     script: |
-      ls -l
       ls -l dir
+      set
       echo type=$TYPE
-      echo version=$VERSION
+      echo version=$VERSION $(VERSION)
