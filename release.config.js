@@ -6,7 +6,7 @@ module.exports={
             {"type": "release", "release": "major"},
         ],
         parserOpts: {
-            "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+            "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
         }
     }],
 
