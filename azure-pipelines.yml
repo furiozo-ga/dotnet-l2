@@ -73,7 +73,7 @@ steps:
     $t npm ls
   name: diag1
   displayName: diag1
-  variables: [REL_TYP: '', REL_VER: '']
+  variables: {REL_TYP: '', REL_VER: ''}
 
 - task: Bash@3
   displayName: diag2
