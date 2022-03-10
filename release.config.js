@@ -11,7 +11,10 @@ module.exports={
     }],
 
     ["@semantic-release/exec",{
-        successCmd: ["echo nextRelease.version=${nextRelease.version}","echo nextRelease.type=${nextRelease.type}"]
+        successCmd: `
+            echo nextRelease.version=${nextRelease.version}
+            echo nextRelease.type=${nextRelease.type}
+        `
     }],
 
 
