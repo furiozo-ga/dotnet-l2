@@ -14,4 +14,8 @@ module.exports={
     "@semantic-release/changelog",
     "@semantic-release/git"
   ]
+  branches: [
+    'mastera',
+    { name: 'release-*', prerelease: true },
+  ]
 }
