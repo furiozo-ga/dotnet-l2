@@ -92,13 +92,13 @@ steps:
 
 
 - bash: |
-    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
+    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)   last $(diag1.LAST_VER)"
   condition: and(eq(variables['diag1.REL_TYP'], ''), succeeded())
   failOnStderr: false
   name: norel
 
 - bash: |
-    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
+    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)   last $(diag1.LAST_VER)"
   condition: and(ne(variables['diag1.REL_TYP'], ''), succeeded())
   failOnStderr: true
   name: somerel

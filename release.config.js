@@ -11,6 +11,7 @@ module.exports={
     }],
 
     ["@semantic-release/exec",{
+        analyzeCommitsCmd: `##vso[task.setvariable variable=LAST_VER;isoutput=true]\${lastRelease.version}`
         successCmd: `
             echo "##vso[task.setvariable variable=REL_VER;isoutput=true]\${nextRelease.version}"
             echo "##vso[task.setvariable variable=REL_TYP;isoutput=true]\${nextRelease.type}"
