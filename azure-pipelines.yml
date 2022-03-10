@@ -80,12 +80,12 @@ steps:
     failOnStderr: true
     targetType: 'inline'
     script: |
-      if [ "x$REL_TYP" = "x" ];then
+      if [ "x$(diag1.REL_TYP)" = "x" ];then
         echo no new release
         exit 0
       fi
-      echo type=$REL_TYP
-      echo version=$REL_VER
+      echo type=$(diag1.REL_TYP)
+      echo version=$(diag1.REL_VER)
       ls -l dir
       set
 
@@ -94,6 +94,21 @@ steps:
     echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
   condition: and(eq(variables['diag1.REL_TYP'], ''), succeeded())
   name: norel
+
+- bash: |
+    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
+  condition: and(eq(variables['diag1.REL_TYP'], 'patch'), succeeded())
+  name: pathc
+
+- bash: |
+    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
+  condition: and(eq(variables['diag1.REL_TYP'], 'minor'), succeeded())
+  name: minor
+
+- bash: |
+    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
+  condition: and(eq(variables['diag1.REL_TYP'], 'major'), succeeded())
+  name: major
 
 #- ${{ if eq( variables['diag1.REL_TYP'] ,'') }}:
 #  - bash: echo "rel no release $(diag1.REL_TYP)"
