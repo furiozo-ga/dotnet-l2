@@ -15,7 +15,7 @@ module.exports={
             ##vso[task.setvariable variable=OLD_VER;isoutput=true]\${lastRelease.version}
             ##vso[task.setvariable variable=THE_VER;isoutput=true]\${lastRelease.version}
             ##vso[task.setvariable variable=REL_TYP;isoutput=true]re
-            echo asdasd \
+            echo \${lastRelease.version}\
             && false \
         `,
         successCmd: `
