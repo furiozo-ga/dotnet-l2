@@ -109,7 +109,7 @@ steps:
   name: patch
 
 - bash: |
-    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
+    echo "typ $(diag1.REL_TYP)   ver 
   condition: and(eq(variables['diag1.REL_TYP'], 'minor'), succeeded())
   name: minor
 
@@ -117,6 +117,16 @@ steps:
     echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
   condition: and(eq(variables['diag1.REL_TYP'], 'major'), succeeded())
   name: major
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker.io/furiozoga'
+    repository: 'furiozoga/l2'
+    command: 'buildAndPush'
+    Dockerfile: 'dockerfile'
+    tags: |
+      $(Build.BuildId)
+      $(diag1.REL_VER)"
 
 #- ${{ if eq( variables['diag1.REL_TYP'] ,'') }}:
 #  - bash: echo "rel no release $(diag1.REL_TYP)"
