@@ -119,7 +119,7 @@ steps:
   name: major
 
 - task: Docker@2
-  condition: and(or(ne(variables['diag1.REL_TYP'], 're'),eq($(buildContainers),'force')), succeeded())
+  condition: and(or(ne(variables['diag1.REL_TYP'], 're'),eq(variables.buildContainers,'force')), succeeded())
   inputs:
     containerRegistry: docker.io/furiozoga
     repository: furiozoga/l2
