@@ -121,7 +121,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: docker.io/furiozoga
-    condition: and(or(ne(variables['diag1.REL_TYP'], 're'),eq($(buildContainers),'force')), succeeded())
+    condition: and(eq($(buildContainers),'force'), succeeded())
     repository: furiozoga/l2
     command: buildAndPush
     Dockerfile: dockerfile
