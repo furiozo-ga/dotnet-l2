@@ -11,9 +11,14 @@ module.exports={
     }],
 
     ["@semantic-release/exec",{
-        analyzeCommitsCmd: `##vso[task.setvariable variable=LAST_VER;isoutput=true]\${lastRelease.version}`,
+        analyzeCommitsCmd: `
+            ##vso[task.setvariable variable=OLD_VER;isoutput=true]\${lastRelease.version}
+            ##vso[task.setvariable variable=THE_VER;isoutput=true]\${lastRelease.version}
+            ##vso[task.setvariable variable=REL_TYP;isoutput=true]re
+        `,
         successCmd: `
-            ##vso[task.setvariable variable=REL_VER;isoutput=true]\${nextRelease.version}
+            ##vso[task.setvariable variable=NEW_VER;isoutput=true]\${nextRelease.version}
+            ##vso[task.setvariable variable=THE_VER;isoutput=true]\${nextRelease.version}
             ##vso[task.setvariable variable=REL_TYP;isoutput=true]\${nextRelease.type}
         `,
         failCmd: `echo ====== fail ======`

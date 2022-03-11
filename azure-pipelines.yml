@@ -81,52 +81,51 @@ steps:
     failOnStderr: true
     targetType: 'inline'
     script: |
-      if [ "x$DIAG1_REL_TYP" = "x" ];then
+      if [ "x$DIAG1_NEW_TYP" = "x" ];then
         echo no new release
         exit 0
       fi
-      echo type=$DIAG1_REL_TYP
-      echo version=$DIAG1_REL_VER
+      echo type=$DIAG1_NEW_TYP
+      echo version=$DIAG1_NEW_VER
       ls -l dir
       set
 
 
 - bash: |
-    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)   last $(diag1.LAST_VER)"
-  condition: and(eq(variables['diag1.REL_TYP'], ''), succeeded())
+    echo "typ $(diag1.REL_TYP)   old $(diag1.OLD_VER)   the $(diag1.THE_VER)"
+  condition: and(eq(variables['diag1.REL_TYP'], 're'), succeeded())
   failOnStderr: false
   name: norel
 
 - bash: |
-    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)   last $(diag1.LAST_VER)"
-  condition: and(ne(variables['diag1.REL_TYP'], ''), succeeded())
+    echo "typ $(diag1.REL_TYP)   new $(diag1.NEW_VER)   the $(diag1.THE_VER)"
+  condition: and(ne(variables['diag1.REL_TYP'], 're'), succeeded())
   failOnStderr: true
   name: somerel
 
 - bash: |
-    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
+    echo "typ $(diag1.REL_TYP)   new $(diag1.NEW_VER)   the $(diag1.THE_VER)"
   condition: and(eq(variables['diag1.REL_TYP'], 'patch'), succeeded())
   name: patch
 
 - bash: |
-    echo "typ $(diag1.REL_TYP)   ver 
+    echo "typ $(diag1.REL_TYP)   new $(diag1.NEW_VER)   the $(diag1.THE_VER)"
   condition: and(eq(variables['diag1.REL_TYP'], 'minor'), succeeded())
   name: minor
 
 - bash: |
-    echo "typ $(diag1.REL_TYP)   ver $(diag1.REL_VER)"
+    echo "typ $(diag1.REL_TYP)   new $(diag1.NEW_VER)   the $(diag1.THE_VER)"
   condition: and(eq(variables['diag1.REL_TYP'], 'major'), succeeded())
   name: major
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'docker.io/furiozoga'
-    repository: 'furiozoga/l2'
-    command: 'buildAndPush'
-    Dockerfile: 'dockerfile'
-    tags: |
-      $(Build.BuildId)
-      $(diag1.REL_VER)"
+    containerRegistry: docker.io/furiozoga
+    condition: and(or(ne(variables['diag1.REL_TYP'], 're'),eq($(buildContainers),'force')), succeeded())
+    repository: furiozoga/l2
+    command: buildAndPush
+    Dockerfile: dockerfile
+    tags: $(diag1.THE_VER)
 
 #- ${{ if eq( variables['diag1.REL_TYP'] ,'') }}:
 #  - bash: echo "rel no release $(diag1.REL_TYP)"
